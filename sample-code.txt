@@ -1,0 +1,64 @@
+import React, { Component } from "react";
+
+var URL_API = "https://www.southpolebit.com/cars/";
+var SPEED_API = URL_API + "speed.php";
+var FUELD_API = URL_API + "fuel.php";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      speed: 0,
+      fuel: 0
+    };
+  }
+
+  render() {
+    return (
+      <div className='container'>
+            <div className="titlebordl">
+              <p id="timer-label"> Speed: {this.state.speed}</p>
+              <p id="timer-label"> Fueld: {this.state.fuel}</p>
+            </div>
+      </div>
+    );
+  }
+
+
+// ------------------------ START 
+
+  
+  componentDidMount(){
+    M.Sidenav.init(this.sidenav);
+    this.handleSpeed();
+    this.handleFuel();
+  }
+  componentWillMount() {
+  }
+
+  handleSpeed = () => {
+    let intervalSpeed = setInterval(() => {
+      fetch(SPEED_API)
+        .then(response => response.json())
+        .then(data => this.setState({ speed: data }))
+        .catch(function(error) {
+          console.log("Request failed", error);
+        });
+    }, 1000);
+    //    this.state.count1 *= 60;
+  };
+
+  handleFuel = () => {
+    let intervalFuel = setInterval(() => {
+      fetch(FUELD_API)
+        .then(response => response.json())
+        .then(data => this.setState({ fuel: data }))
+        .catch(function(error) {
+          console.log("Request failed", error);
+        });
+    }, 1000);
+    //    this.state.count1 *= 60;
+  };
+//  --------------------  STOP
+}
+export default App;
