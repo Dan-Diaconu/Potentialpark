@@ -1,12 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #**********************************
-#Demo
+##Demo
       https://www.southpolebit.com/cars/
-#API 
+##API 
       http://southpolebit.com/cars/API_POTENTIAL.rar
-#DB_CREATE_INSERT 
+##DB_CREATE_INSERT 
       http://southpolebit.com/cars/Db_CREATE_INSERT_Potentialpark.rar
+## Clone:
+       git@github.com:Dan-Diaconu/Potentialpark.git
+ ## GIThub
+       https://github.com/Dan-Diaconu/Potentialpark
 #**********************************       
         
 ## Clone:
